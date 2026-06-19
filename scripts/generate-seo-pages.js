@@ -233,14 +233,14 @@ function slugToLabel(slug) {
 
 function renderPage(p) {
   const canonical = `https://multiplexsaguenay.com/${p.slug}.html`;
-  const bulletsHtml = p.bullets.map((b) => `<li class="flex gap-3"><span class="text-brand-orange mt-1">→</span><span>${b}</span></li>`).join('\n');
+  const bulletsHtml = p.bullets.map((b) => `<li class="flex gap-3"><span class="text-brand-blue mt-1">→</span><span>${b}</span></li>`).join('\n');
   const faqHtml = (p.faq || [])
     .map(
       (f) => `
-        <details class="group border border-white/10 rounded-xl p-6 bg-white/5">
+        <details class="group border border-slate-200 rounded-xl p-6 bg-slate-50">
           <summary class="font-serif text-lg cursor-pointer list-none flex justify-between items-center gap-4">
             ${f.q}
-            <span class="text-brand-orange text-2xl group-open:rotate-45 transition-transform">+</span>
+            <span class="text-brand-blue text-2xl group-open:rotate-45 transition-transform">+</span>
           </summary>
           <p class="mt-4 text-zinc-400 font-light leading-relaxed">${f.a}</p>
         </details>`
@@ -249,7 +249,7 @@ function renderPage(p) {
   const relatedHtml = p.related
     .map(
       (slug) =>
-        `<a href="/${slug}.html" class="block border border-white/10 rounded-lg px-4 py-3 text-sm hover:border-brand-orange hover:text-brand-orange transition capitalize">${slugToLabel(slug)}</a>`
+        `<a href="/${slug}.html" class="block border border-slate-200 rounded-lg px-4 py-3 text-sm hover:border-brand-blue hover:text-brand-blue transition capitalize">${slugToLabel(slug)}</a>`
     )
     .join('\n');
 
@@ -258,7 +258,7 @@ function renderPage(p) {
     .slice(0, 6)
     .map(
       (slug) =>
-        `<a href="/${slug}.html" class="text-zinc-500 hover:text-brand-orange text-sm transition">${slugToLabel(slug)}</a>`
+        `<a href="/${slug}.html" class="text-zinc-500 hover:text-brand-blue text-sm transition">${slugToLabel(slug)}</a>`
     )
     .join(' · ');
 
@@ -280,7 +280,7 @@ function renderPage(p) {
             theme: {
                 extend: {
                     colors: {
-                        brand: { orange: '#e56a25', dark: '#0a0a0a', light: '#f5f5f5' }
+                        brand: { blue: '#142838', dark: '#142838', light: '#f8fafc' }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -303,46 +303,46 @@ function renderPage(p) {
     }
     </script>
 </head>
-<body class="antialiased font-sans bg-brand-dark text-brand-light">
-    <nav class="border-b border-white/10 py-5 px-6 md:px-12 flex flex-wrap justify-between items-center gap-4">
-        <a href="/index.html" class="text-xl font-serif font-semibold tracking-wider uppercase text-white">Multiplex <span class="text-brand-orange">Saguenay</span></a>
+<body class="antialiased font-sans bg-brand-light text-brand-dark">
+    <nav class="border-b border-slate-200 py-5 px-6 md:px-12 flex flex-wrap justify-between items-center gap-4">
+        <a href="/index.html" class="text-xl font-serif font-semibold tracking-wider uppercase text-brand-dark">Multiplex <span class="text-brand-blue">Saguenay</span></a>
         <div class="flex flex-wrap gap-6 text-xs uppercase tracking-widest text-zinc-400">
-            <a href="/index.html#expertise" class="hover:text-brand-orange transition">Expertise</a>
-            <a href="/index.html#evaluation" class="hover:text-brand-orange transition">Évaluation gratuite</a>
-            <a href="tel:+14185808958" class="hover:text-brand-orange transition">418-580-8958</a>
+            <a href="/index.html#expertise" class="hover:text-brand-blue transition">Expertise</a>
+            <a href="/index.html#evaluation" class="hover:text-brand-blue transition">Évaluation gratuite</a>
+            <a href="tel:+14185808958" class="hover:text-brand-blue transition">418-580-8958</a>
         </div>
     </nav>
 
-    <header class="relative py-20 md:py-28 px-6 md:px-12 border-b border-white/10 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-brand-orange/10 to-transparent pointer-events-none"></div>
+    <header class="relative py-20 md:py-28 px-6 md:px-12 border-b border-slate-200 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-blue/10 to-transparent pointer-events-none"></div>
         <div class="max-w-4xl mx-auto relative">
-            <p class="text-brand-orange uppercase tracking-[0.25em] text-xs mb-4 font-semibold">Saguenay, Québec · ${p.keyword}</p>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6 leading-tight">${p.h1}</h1>
+            <p class="text-brand-blue uppercase tracking-[0.25em] text-xs mb-4 font-semibold">Saguenay, Québec · ${p.keyword}</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-brand-dark mb-6 leading-tight">${p.h1}</h1>
             <p class="text-xl text-zinc-300 font-light max-w-2xl">${p.subtitle}</p>
         </div>
     </header>
 
     <main class="max-w-4xl mx-auto px-6 md:px-12 py-16 md:py-24">
-        <article class="prose prose-invert max-w-none">
-            <p class="text-lg text-zinc-300 font-light leading-relaxed mb-10">${p.intro}</p>
-            <h2 class="text-2xl font-serif text-white mb-6">Pourquoi travailler avec un spécialiste à ${p.locality}?</h2>
-            <ul class="space-y-4 text-zinc-300 font-light mb-14">${bulletsHtml}</ul>
+        <article class="prose prose-slate max-w-none">
+            <p class="text-lg text-slate-600 font-light leading-relaxed mb-10">${p.intro}</p>
+            <h2 class="text-2xl font-serif text-brand-dark mb-6">Pourquoi travailler avec un spécialiste à ${p.locality}?</h2>
+            <ul class="space-y-4 text-slate-600 font-light mb-14">${bulletsHtml}</ul>
 
-            <h2 class="text-2xl font-serif text-white mb-6">Processus de vente</h2>
+            <h2 class="text-2xl font-serif text-brand-dark mb-6">Processus de vente</h2>
             <ol class="space-y-6 text-zinc-400 font-light mb-14 list-decimal list-inside">
-                <li><strong class="text-white">Évaluation gratuite</strong> — Analyse de vos revenus, dépenses et du marché au Saguenay.</li>
-                <li><strong class="text-white">Préparation du mandat</strong> — Fiche investisseur, photos, collecte des baux et documents.</li>
-                <li><strong class="text-white">Mise en marché</strong> — Centris, réseau privé et suivi des visites.</li>
-                <li><strong class="text-white">Négociation & closing</strong> — Défense du prix fondée sur le rendement jusqu'à la vente.</li>
+                <li><strong class="text-brand-dark">Évaluation gratuite</strong> — Analyse de vos revenus, dépenses et du marché au Saguenay.</li>
+                <li><strong class="text-brand-dark">Préparation du mandat</strong> — Fiche investisseur, photos, collecte des baux et documents.</li>
+                <li><strong class="text-brand-dark">Mise en marché</strong> — Centris, réseau privé et suivi des visites.</li>
+                <li><strong class="text-brand-dark">Négociation & closing</strong> — Défense du prix fondée sur le rendement jusqu'à la vente.</li>
             </ol>
 
-            ${faqHtml ? `<h2 class="text-2xl font-serif text-white mb-6">Questions fréquentes</h2><div class="space-y-4 mb-14">${faqHtml}</div>` : ''}
+            ${faqHtml ? `<h2 class="text-2xl font-serif text-brand-dark mb-6">Questions fréquentes</h2><div class="space-y-4 mb-14">${faqHtml}</div>` : ''}
         </article>
 
-        <aside class="bg-[#111] border border-white/10 rounded-2xl p-8 md:p-12 text-center mb-16">
-            <h2 class="text-2xl md:text-3xl font-serif text-white mb-4">Obtenez votre évaluation gratuite</h2>
+        <aside class="bg-white border border-slate-200 rounded-2xl p-8 md:p-12 text-center mb-16">
+            <h2 class="text-2xl md:text-3xl font-serif text-brand-dark mb-4">Obtenez votre évaluation gratuite</h2>
             <p class="text-zinc-400 font-light mb-8 max-w-xl mx-auto">Remplissez le formulaire en quelques minutes et recevez une analyse personnalisée pour votre ${p.keyword} à ${p.locality}.</p>
-            <a href="/index.html#evaluation" class="inline-block bg-brand-orange text-white px-10 py-4 rounded-full text-sm uppercase tracking-wider font-semibold hover:bg-white hover:text-brand-dark transition duration-300">Demander une évaluation</a>
+            <a href="/index.html#evaluation" class="inline-block bg-brand-blue text-white px-10 py-4 rounded-full text-sm uppercase tracking-wider font-semibold hover:bg-white hover:text-brand-dark transition duration-300">Demander une évaluation</a>
         </aside>
 
         <section class="mb-12">
@@ -353,10 +353,10 @@ function renderPage(p) {
         <p class="text-xs text-zinc-600 leading-relaxed">${otherLinks}</p>
     </main>
 
-    <footer class="border-t border-white/10 py-12 px-6 text-center text-zinc-500 text-xs uppercase tracking-wider">
-        <p class="mb-4"><a href="tel:+14185808958" class="text-white hover:text-brand-orange text-lg font-serif normal-case tracking-normal">418-580-8958</a> · <a href="mailto:rene.bouchard@exprealty.com" class="hover:text-brand-orange normal-case tracking-normal">rene.bouchard@exprealty.com</a></p>
+    <footer class="border-t border-slate-200 py-12 px-6 text-center text-zinc-500 text-xs uppercase tracking-wider">
+        <p class="mb-4"><a href="tel:+14185808958" class="text-brand-dark hover:text-brand-blue text-lg font-serif normal-case tracking-normal">418-580-8958</a> · <a href="mailto:rene.bouchard@exprealty.com" class="hover:text-brand-blue normal-case tracking-normal">rene.bouchard@exprealty.com</a></p>
         <p>&copy; 2026 Multiplex Saguenay | René Bouchard Immobilier (EXP)</p>
-        <p class="mt-4"><a href="/index.html" class="text-brand-orange hover:underline normal-case">Retour à l'accueil</a></p>
+        <p class="mt-4"><a href="/index.html" class="text-brand-blue hover:underline normal-case">Retour à l'accueil</a></p>
     </footer>
 </body>
 </html>`;
