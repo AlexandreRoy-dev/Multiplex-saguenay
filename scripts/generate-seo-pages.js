@@ -171,14 +171,14 @@ const pages = [
   {
     slug: 'courtier-multiplex-saguenay',
     title: 'Courtier multiplex Saguenay | René Bouchard',
-    description: 'Courtier immobilier spécialisé en multiplex et immeubles à revenus au Saguenay. Vente stratégique, évaluation gratuite, 15+ ans d\'expérience.',
+    description: 'Courtier immobilier spécialisé en multiplex et immeubles à revenus au Saguenay. Vente stratégique, évaluation gratuite, 20+ ans d\'expérience.',
     h1: 'Courtier multiplex au Saguenay',
     subtitle: 'René Bouchard — accompagnement dédié aux propriétaires d\'immeubles à revenus.',
     keyword: 'courtier multiplex',
     locality: 'Saguenay',
     intro: 'Choisir un courtier qui comprend les immeubles à revenus, c\'est choisir quelqu\'un qui sait parler aux investisseurs, défendre votre prix avec des données et protéger vos intérêts jusqu\'à la transaction finale.',
     bullets: [
-      '15+ ans d\'expérience en immobilier au Saguenay',
+      '20+ ans d\'expérience en immobilier au Saguenay',
       'Mandats Centris et marketing ciblé investisseur',
       'Évaluation gratuite et sans engagement',
     ],
@@ -304,21 +304,22 @@ function renderPage(p) {
     </script>
 </head>
 <body class="antialiased font-sans bg-brand-light text-brand-dark">
-    <nav class="border-b border-slate-200 py-5 px-6 md:px-12 flex flex-wrap justify-between items-center gap-4">
-        <a href="/index.html" class="text-xl font-serif font-semibold tracking-wider uppercase text-brand-dark">Multiplex <span class="text-brand-blue">Saguenay</span></a>
-        <div class="flex flex-wrap gap-6 text-xs uppercase tracking-widest text-zinc-400">
+    <nav class="border-b border-slate-200 bg-white py-5 px-6 md:px-12 flex flex-wrap justify-between items-center gap-4 shadow-sm">
+        <a href="/index.html" class="text-2xl md:text-3xl font-serif font-bold tracking-wider uppercase text-brand-dark">Multiplex <span class="text-brand-blue">Saguenay</span></a>
+        <div class="flex flex-wrap gap-6 text-xs uppercase tracking-widest text-zinc-500">
             <a href="/index.html#expertise" class="hover:text-brand-blue transition">Expertise</a>
             <a href="/index.html#evaluation" class="hover:text-brand-blue transition">Évaluation gratuite</a>
             <a href="tel:+14185808958" class="hover:text-brand-blue transition">418-580-8958</a>
         </div>
     </nav>
 
-    <header class="relative py-20 md:py-28 px-6 md:px-12 border-b border-slate-200 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-brand-blue/10 to-transparent pointer-events-none"></div>
+    <header class="relative py-20 md:py-28 px-6 md:px-12 border-b border-slate-200 overflow-hidden bg-brand-dark text-white">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-blue/80 to-brand-dark pointer-events-none"></div>
         <div class="max-w-4xl mx-auto relative">
-            <p class="text-brand-blue uppercase tracking-[0.25em] text-xs mb-4 font-semibold">Saguenay, Québec · ${p.keyword}</p>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-brand-dark mb-6 leading-tight">${p.h1}</h1>
-            <p class="text-xl text-zinc-300 font-light max-w-2xl">${p.subtitle}</p>
+            <p class="text-2xl md:text-3xl font-serif font-bold uppercase tracking-[0.12em] text-white mb-6">Multiplex <span class="text-sky-300">Saguenay</span></p>
+            <p class="text-sky-200/90 uppercase tracking-[0.25em] text-xs mb-4 font-semibold">Saguenay, Québec · ${p.keyword} · 20+ ans d'expérience</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6 leading-tight">${p.h1}</h1>
+            <p class="text-xl text-zinc-200 font-light max-w-2xl">${p.subtitle}</p>
         </div>
     </header>
 
@@ -353,9 +354,11 @@ function renderPage(p) {
         <p class="text-xs text-zinc-600 leading-relaxed">${otherLinks}</p>
     </main>
 
-    <footer class="border-t border-slate-200 py-12 px-6 text-center text-zinc-500 text-xs uppercase tracking-wider">
+    <footer class="border-t border-slate-200 py-12 px-6 text-center text-zinc-500 text-xs uppercase tracking-wider bg-white">
+        <p class="text-2xl font-serif font-bold uppercase tracking-wider text-brand-dark mb-2 normal-case">Multiplex <span class="text-brand-blue">Saguenay</span></p>
+        <p class="text-sm text-zinc-500 normal-case tracking-normal mb-6">Plus de 20 ans d'expertise · René Bouchard Immobilier (EXP)</p>
         <p class="mb-4"><a href="tel:+14185808958" class="text-brand-dark hover:text-brand-blue text-lg font-serif normal-case tracking-normal">418-580-8958</a> · <a href="mailto:rene.bouchard@exprealty.com" class="hover:text-brand-blue normal-case tracking-normal">rene.bouchard@exprealty.com</a></p>
-        <p>&copy; 2026 Multiplex Saguenay | René Bouchard Immobilier (EXP)</p>
+        <p>&copy; 2026 Multiplex Saguenay | Tous droits réservés</p>
         <p class="mt-4"><a href="/index.html" class="text-brand-blue hover:underline normal-case">Retour à l'accueil</a></p>
     </footer>
 </body>
