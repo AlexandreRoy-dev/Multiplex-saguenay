@@ -87,6 +87,28 @@
             letter-spacing: 0.12em;
             text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
         }
+
+        .form-choice label:has(input:checked) .form-choice-card {
+            background-color: #142838;
+            border-color: #142838;
+        }
+        .form-choice label:has(input:checked) .form-choice-card .form-choice-title,
+        .form-choice label:has(input:checked) .form-choice-card .form-choice-sub {
+            color: #ffffff;
+        }
+
+        .nav-dropdown-menu {
+            background-color: #ffffff;
+            color: #142838;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+            z-index: 60;
+        }
+        .nav-dropdown-menu a {
+            color: #142838;
+        }
+        .nav-dropdown-menu a:hover {
+            background-color: #f8fafc;
+        }
     </style>
 </head>
 <body class="antialiased font-sans relative">
@@ -96,13 +118,28 @@
     <div class="cursor-outline" data-cursor></div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 bg-brand-dark/95 backdrop-blur-md border-b border-white/10 py-4 px-6 md:px-10 flex justify-between items-center">
+    <nav class="fixed w-full z-50 top-0 bg-brand-dark/90 backdrop-blur-md border-b border-white/10 py-4 px-6 md:px-10 flex justify-between items-center">
         <a href="index.html" class="brand-wordmark text-2xl md:text-3xl font-serif font-bold tracking-wider uppercase text-white hover:opacity-90 transition">
             Multiplex <span class="text-sky-300">Saguenay</span>
         </a>
-        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest text-white/90">
+        <div class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest text-white">
             <a href="#expertise" class="hover-trigger transition hover:text-sky-300">L'Expertise</a>
             <a href="#evaluation" class="hover-trigger transition hover:text-sky-300">Évaluation</a>
+            <div class="relative group">
+                <button type="button" class="hover-trigger transition hover:text-sky-300 flex items-center gap-1" aria-expanded="false" aria-haspopup="true">
+                    Ressources
+                    <svg class="w-3 h-3 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="nav-dropdown-menu absolute right-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200">
+                    <div class="min-w-[220px] rounded-xl border border-slate-200 py-2 normal-case tracking-normal text-left">
+                        <a href="vendre-duplex-saguenay.html" class="block px-4 py-2.5 text-sm hover-trigger">Duplex Saguenay</a>
+                        <a href="vendre-multiplex-chicoutimi.html" class="block px-4 py-2.5 text-sm hover-trigger">Chicoutimi</a>
+                        <a href="vendre-multiplex-jonquiere.html" class="block px-4 py-2.5 text-sm hover-trigger">Jonquière</a>
+                        <a href="courtier-multiplex-saguenay.html" class="block px-4 py-2.5 text-sm hover-trigger">Courtier multiplex</a>
+                        <a href="evaluation-multiplex-saguenay.html" class="block px-4 py-2.5 text-sm hover-trigger">Évaluation gratuite</a>
+                    </div>
+                </div>
+            </div>
             <a href="#contact" class="hover-trigger transition hover:text-sky-300">Contact</a>
         </div>
     </nav>
@@ -215,33 +252,33 @@
                         <div class="w-8 h-8 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-sm">1</div>
                         <span class="text-sm uppercase tracking-[0.1em] text-brand-dark font-semibold">Taille de l'immeuble</span>
                     </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <label class="cursor-pointer group">
-                            <input type="radio" name="units" value="duplex" class="peer sr-only" checked>
-                            <div class="border border-slate-300 rounded-xl p-6 text-center transition-all duration-300 peer-checked:bg-brand-blue peer-checked:border-brand-blue hover:border-brand-blue/40">
-                                <span class="block text-xl font-serif mb-1 text-brand-dark group-[.peer:checked+&]:text-white transition-colors">Duplex</span>
-                                <span class="block text-xs uppercase tracking-widest text-zinc-500 group-[.peer:checked+&]:text-white/80 transition-colors">2 Portes</span>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 form-choice">
+                        <label class="cursor-pointer">
+                            <input type="radio" name="units" value="duplex" class="sr-only" checked>
+                            <div class="form-choice-card border border-slate-300 rounded-xl p-6 text-center transition-all duration-300 hover:border-brand-blue/40">
+                                <span class="form-choice-title block text-xl font-serif mb-1 text-brand-dark">Duplex</span>
+                                <span class="form-choice-sub block text-xs uppercase tracking-widest text-zinc-500">2 Portes</span>
                             </div>
                         </label>
-                        <label class="cursor-pointer group">
-                            <input type="radio" name="units" value="triplex-quadriplex" class="peer sr-only">
-                            <div class="border border-slate-300 rounded-xl p-6 text-center transition-all duration-300 peer-checked:bg-brand-blue peer-checked:border-brand-blue hover:border-brand-blue/40">
-                                <span class="block text-xl font-serif mb-1 text-brand-dark group-[.peer:checked+&]:text-white transition-colors">3 à 4</span>
-                                <span class="block text-xs uppercase tracking-widest text-zinc-500 group-[.peer:checked+&]:text-white/80 transition-colors">Portes</span>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="units" value="triplex-quadriplex" class="sr-only">
+                            <div class="form-choice-card border border-slate-300 rounded-xl p-6 text-center transition-all duration-300 hover:border-brand-blue/40">
+                                <span class="form-choice-title block text-xl font-serif mb-1 text-brand-dark">3 à 4</span>
+                                <span class="form-choice-sub block text-xs uppercase tracking-widest text-zinc-500">Portes</span>
                             </div>
                         </label>
-                        <label class="cursor-pointer group">
-                            <input type="radio" name="units" value="5-8" class="peer sr-only">
-                            <div class="border border-slate-300 rounded-xl p-6 text-center transition-all duration-300 peer-checked:bg-brand-blue peer-checked:border-brand-blue hover:border-brand-blue/40">
-                                <span class="block text-xl font-serif mb-1 text-brand-dark group-[.peer:checked+&]:text-white transition-colors">5 à 8</span>
-                                <span class="block text-xs uppercase tracking-widest text-zinc-500 group-[.peer:checked+&]:text-white/80 transition-colors">Portes</span>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="units" value="5-8" class="sr-only">
+                            <div class="form-choice-card border border-slate-300 rounded-xl p-6 text-center transition-all duration-300 hover:border-brand-blue/40">
+                                <span class="form-choice-title block text-xl font-serif mb-1 text-brand-dark">5 à 8</span>
+                                <span class="form-choice-sub block text-xs uppercase tracking-widest text-zinc-500">Portes</span>
                             </div>
                         </label>
-                        <label class="cursor-pointer group">
-                            <input type="radio" name="units" value="9plus" class="peer sr-only">
-                            <div class="border border-slate-300 rounded-xl p-6 text-center transition-all duration-300 peer-checked:bg-brand-blue peer-checked:border-brand-blue hover:border-brand-blue/40">
-                                <span class="block text-xl font-serif mb-1 text-brand-dark group-[.peer:checked+&]:text-white transition-colors">9 +</span>
-                                <span class="block text-xs uppercase tracking-widest text-zinc-500 group-[.peer:checked+&]:text-white/80 transition-colors">Portes</span>
+                        <label class="cursor-pointer">
+                            <input type="radio" name="units" value="9plus" class="sr-only">
+                            <div class="form-choice-card border border-slate-300 rounded-xl p-6 text-center transition-all duration-300 hover:border-brand-blue/40">
+                                <span class="form-choice-title block text-xl font-serif mb-1 text-brand-dark">9 +</span>
+                                <span class="form-choice-sub block text-xs uppercase tracking-widest text-zinc-500">Portes</span>
                             </div>
                         </label>
                     </div>
@@ -286,7 +323,7 @@
 
                 <!-- SUBMIT -->
                 <div class="text-center mt-14">
-                    <button type="button" class="hover-trigger bg-white text-brand-dark px-12 py-5 rounded-full text-sm uppercase tracking-[0.15em] font-bold hover:bg-brand-blue hover:text-white transition-all duration-300 w-full md:w-auto">
+                    <button type="button" class="hover-trigger bg-brand-blue text-white px-12 py-5 rounded-full text-sm uppercase tracking-[0.15em] font-bold hover:bg-brand-dark transition-all duration-300 w-full md:w-auto">
                         Demander mon analyse de rentabilité
                     </button>
                     <div class="flex items-center justify-center gap-2 mt-6 text-zinc-500">
